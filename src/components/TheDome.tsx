@@ -17,9 +17,36 @@ import {
   Mountain,
   Eye
 } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import heroImage from '@/assets/hero-dome.jpg';
+import domeInterior from '@/assets/dome-interior.jpg';
 import domeExterior from '@/assets/dome-exterior.jpg';
 
 const TheDome = () => {
+  const domeImages = [
+    {
+      src: heroImage,
+      alt: 'Luxury dome in pristine forest setting at golden hour',
+      title: 'Forest Setting'
+    },
+    {
+      src: domeExterior,
+      alt: 'Luxury dome exterior with private jacuzzi and wooden deck at sunset',
+      title: 'Private Jacuzzi'
+    },
+    {
+      src: domeInterior,
+      alt: 'Premium dome interior with king-size bed and panoramic windows',
+      title: 'Interior Luxury'
+    },
+  ];
+
   const amenities = [
     { icon: Waves, title: 'Private Jacuzzi', description: 'Relax in your own hot tub under the stars' },
     { icon: Telescope, title: 'Stargazing Telescope', description: 'Explore the cosmos from your private deck' },
@@ -55,15 +82,38 @@ const TheDome = () => {
           </p>
         </div>
 
-        {/* Featured Image */}
+        {/* Dome Images Carousel */}
         <div className="mb-20">
-          <div className="relative overflow-hidden rounded-3xl shadow-[var(--shadow-luxury)] mx-auto max-w-6xl">
-            <img 
-              src={domeExterior} 
-              alt="Luxury dome exterior with private jacuzzi and forest setting at golden hour"
-              className="w-full h-[500px] object-cover hover-scale"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent"></div>
+          <div className="max-w-6xl mx-auto">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent>
+                {domeImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative overflow-hidden rounded-3xl shadow-[var(--shadow-luxury)]">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt}
+                        className="w-full h-[500px] object-cover hover-scale"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent"></div>
+                      <div className="absolute bottom-6 left-6">
+                        <h4 className="text-2xl font-semibold text-white font-luxury">
+                          {image.title}
+                        </h4>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-4" />
+              <CarouselNext className="right-4" />
+            </Carousel>
           </div>
         </div>
 
