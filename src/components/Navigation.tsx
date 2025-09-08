@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +19,7 @@ const Navigation = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
+      setIsSheetOpen(false);
     }
   };
 
@@ -64,40 +65,48 @@ const Navigation = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border">
-            <div className="py-6 space-y-4">
-              {navItems.map((item) => (
-                <button
-                  key={`mobile-${item.id}`}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-foreground hover:text-primary transition-colors font-medium px-6 py-2"
-                >
-                  {item.label}
-                </button>
-              ))}
-              <div className="px-6 pt-4">
-                <button
-                  onClick={() => scrollToSection('booking')}
-                  className="btn-primary w-full"
-                >
-                  Book Now
-                </button>
+          {/* Mobile Menu Sheet */}
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+            <SheetTrigger asChild>
+              <button
+                className="md:hidden text-foreground p-2"
+                aria-label="Toggle mobile menu"
+              >
+                <Menu size={24} />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-full sm:w-80 bg-background">
+              <SheetHeader>
+                <SheetTitle className="text-2xl font-luxury text-primary">
+                  Luxury Dome
+                </SheetTitle>
+              </SheetHeader>
+              
+              <div className="flex flex-col h-full pt-8">
+                <nav className="space-y-6 flex-1">
+                  {navItems.map((item) => (
+                    <button
+                      key={`sheet-${item.id}`}
+                      onClick={() => scrollToSection(item.id)}
+                      className="block w-full text-left text-xl font-medium text-foreground hover:text-primary transition-colors py-3 border-b border-border/50"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </nav>
+                
+                <div className="pt-8 pb-6">
+                  <button
+                    onClick={() => scrollToSection('booking')}
+                    className="btn-primary w-full text-xl py-4"
+                  >
+                    Book Now
+                  </button>
+                </div>
               </div>
-            </div>
-          </div>
-        )}
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </nav>
   );

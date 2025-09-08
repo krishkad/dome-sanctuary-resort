@@ -1,5 +1,12 @@
 import { useState } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 import heroImage from '@/assets/hero-dome.jpg';
 import domeInterior from '@/assets/dome-interior.jpg';
 import domeExterior from '@/assets/dome-exterior.jpg';
@@ -87,35 +94,42 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {galleryImages.map((image, index) => (
-            <div 
-              key={index}
-              className="relative group cursor-pointer overflow-hidden rounded-3xl shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-luxury)] transition-all duration-500"
-              onClick={() => openLightbox(index)}
-            >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img 
-                  src={image.src} 
-                  alt={image.alt}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-              
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-6 left-6 right-6">
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(image.category)}`}>
-                    {image.category}
-                  </span>
-                </div>
-              </div>
+        {/* Gallery Carousel */}
+        <div className="max-w-6xl mx-auto mb-16">
+          <Carousel className="w-full">
+            <CarouselContent>
+              {galleryImages.map((image, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div 
+                    className="relative group cursor-pointer overflow-hidden rounded-3xl shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-luxury)] transition-all duration-500"
+                    onClick={() => openLightbox(index)}
+                  >
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                    
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(image.category)}`}>
+                          {image.category}
+                        </span>
+                      </div>
+                    </div>
 
-              {/* Hover Effect */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/30 rounded-3xl transition-all duration-300"></div>
-            </div>
-          ))}
+                    {/* Hover Effect */}
+                    <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/30 rounded-3xl transition-all duration-300"></div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
         </div>
 
         {/* Gallery Footer */}

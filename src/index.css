@@ -12,11 +12,11 @@
     --background: 35 25% 97%;
     --foreground: 210 15% 15%;
     
-    /* Premium Gold/Yellow Theme */
-    --primary: 42 100% 50%;
-    --primary-foreground: 210 15% 15%;
-    --primary-muted: 42 85% 92%;
-    --primary-glow: 42 100% 65%;
+    /* Premium Gold/Yellow Theme - Darker */
+    --primary: 42 85% 35%;
+    --primary-foreground: 35 25% 97%;
+    --primary-muted: 42 70% 85%;
+    --primary-glow: 42 90% 45%;
     
     /* Sophisticated Neutrals */
     --secondary: 210 15% 15%;

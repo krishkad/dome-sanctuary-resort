@@ -67,36 +67,37 @@ const TheDome = () => {
           </div>
         </div>
 
-        {/* Amenities Grid */}
+        {/* Amenities List */}
         <div className="mb-16">
           <h3 className="text-elegant text-center mb-12 text-secondary">
             Luxury Amenities & Experiences
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {amenities.map((amenity, index) => {
-              const Icon = amenity.icon;
-              return (
-                <div 
-                  key={index}
-                  className="card-luxury text-center hover-lift group"
-                >
-                  <div className="mb-6">
-                    <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-8 h-8 text-primary-foreground" />
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {amenities.map((amenity, index) => {
+                const Icon = amenity.icon;
+                return (
+                  <div 
+                    key={index}
+                    className="flex items-center space-x-4 p-4 rounded-xl hover:bg-primary/5 transition-colors"
+                  >
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-lg font-semibold text-secondary font-luxury">
+                        {amenity.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        {amenity.description}
+                      </p>
                     </div>
                   </div>
-                  
-                  <h4 className="text-lg font-semibold text-secondary mb-3 font-luxury">
-                    {amenity.title}
-                  </h4>
-                  
-                  <p className="text-muted-foreground leading-relaxed">
-                    {amenity.description}
-                  </p>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
 

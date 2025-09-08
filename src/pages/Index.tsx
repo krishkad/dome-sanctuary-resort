@@ -4,6 +4,7 @@ import About from '../components/About';
 import TheDome from '../components/TheDome';
 import FoodMenu from '../components/FoodMenu';
 import Gallery from '../components/Gallery';
+import Testimonials from '../components/Testimonials';
 import Booking from '../components/Booking';
 import Socials from '../components/Socials';
 import Contact from '../components/Contact';
@@ -19,6 +20,7 @@ const Index = () => {
         <TheDome />
         <FoodMenu />
         <Gallery />
+        <Testimonials />
         <Booking />
         <Socials />
         <Contact />
