@@ -1,58 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Luxury Resort Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    /* Luxury Color Palette */
+    --background: 35 25% 97%;
+    --foreground: 210 15% 15%;
+    
+    /* Premium Gold/Yellow Theme */
+    --primary: 42 100% 50%;
+    --primary-foreground: 210 15% 15%;
+    --primary-muted: 42 85% 92%;
+    --primary-glow: 42 100% 65%;
+    
+    /* Sophisticated Neutrals */
+    --secondary: 210 15% 15%;
+    --secondary-foreground: 35 25% 97%;
+    --secondary-muted: 210 10% 25%;
+    
+    /* Elegant Accents */
+    --accent: 30 25% 85%;
+    --accent-foreground: 210 15% 15%;
+    --muted: 30 15% 92%;
+    --muted-foreground: 210 8% 45%;
+    
+    /* Natural Wood Tones */
+    --wood: 25 35% 65%;
+    --wood-dark: 25 45% 45%;
+    --wood-light: 25 25% 85%;
+    
+    /* Luxury Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-dark: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-muted)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--secondary) / 0.8), hsl(var(--secondary-muted) / 0.6));
+    --gradient-section: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    
+    /* Premium Shadows */
+    --shadow-luxury: 0 25px 50px -12px hsl(var(--secondary) / 0.25);
+    --shadow-gold: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-elegant: 0 4px 20px -2px hsl(var(--secondary) / 0.15);
+    --shadow-soft: 0 2px 10px -1px hsl(var(--secondary) / 0.1);
+    
+    /* Refined Borders */
+    --border: 30 15% 88%;
+    --border-muted: 30 10% 92%;
+    
+    /* Premium Transitions */
+    --transition-luxury: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-quick: all 0.2s ease-out;
+    
+    /* Component Base Colors */
+    --card: 35 25% 97%;
+    --card-foreground: 210 15% 15%;
+    --popover: 35 25% 97%;
+    --popover-foreground: 210 15% 15%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --destructive-foreground: 35 25% 97%;
+    --input: 30 15% 88%;
+    --ring: 42 100% 50%;
+    --radius: 0.75rem;
   }
 
   .dark {
@@ -101,5 +113,83 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  /* Luxury Button Variants */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground;
+    @apply hover:shadow-[var(--shadow-gold)] transition-[var(--transition-luxury)];
+    @apply px-8 py-4 rounded-xl font-semibold text-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground border-2 border-secondary;
+    @apply hover:bg-secondary-muted transition-[var(--transition-smooth)];
+    @apply px-8 py-4 rounded-xl font-semibold text-lg;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary bg-transparent;
+    @apply hover:bg-primary hover:text-primary-foreground transition-[var(--transition-smooth)];
+    @apply px-8 py-4 rounded-xl font-semibold text-lg;
+  }
+  
+  /* Premium Cards */
+  .card-luxury {
+    @apply bg-card text-card-foreground rounded-2xl p-8;
+    @apply shadow-[var(--shadow-elegant)] border border-border;
+    @apply hover:shadow-[var(--shadow-luxury)] transition-[var(--transition-luxury)];
+  }
+  
+  /* Smooth Scroll */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+  
+  /* Hero Section */
+  .hero-overlay {
+    background: var(--gradient-hero);
+  }
+  
+  /* Section Backgrounds */
+  .section-gradient {
+    background: var(--gradient-section);
+  }
+  
+  /* Wood Texture Accents */
+  .wood-accent {
+    @apply bg-gradient-to-r from-wood-light to-wood;
+  }
+  
+  /* Hover Animations */
+  .hover-lift {
+    @apply hover:-translate-y-2 transition-[var(--transition-smooth)];
+  }
+  
+  .hover-scale {
+    @apply hover:scale-105 transition-[var(--transition-smooth)];
+  }
+  
+  /* Typography */
+  .text-luxury {
+    @apply text-6xl font-bold leading-tight;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .text-premium {
+    @apply text-4xl font-semibold leading-tight;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .text-elegant {
+    @apply text-2xl font-medium leading-relaxed;
+    font-family: 'Playfair Display', serif;
   }
 }
