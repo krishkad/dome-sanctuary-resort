@@ -24,7 +24,7 @@ const FoodMenu = () => {
         {
           name: 'Smoked Salmon Benedict',
           description: 'Poached eggs, smoked salmon, hollandaise on toasted brioche',
-          price: '₹320',
+          price: '₹350',
           tags: ['Premium', 'Signature'],
         },
       ],
