@@ -1,14 +1,22 @@
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { useState } from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Instagram,
+  Facebook,
+  Twitter,
+  Youtube,
+} from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Footer = () => {
   const { toast } = useToast();
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       toast({
         title: "Email Required",
@@ -20,33 +28,34 @@ const Footer = () => {
 
     toast({
       title: "Successfully Subscribed!",
-      description: "Thank you for joining our newsletter. You'll receive exclusive updates.",
+      description:
+        "Thank you for joining our newsletter. You'll receive exclusive updates.",
     });
 
-    setEmail('');
+    setEmail("");
   };
 
   const quickLinks = [
-    { label: 'Home', href: '#hero' },
-    { label: 'About', href: '#about' },
-    { label: 'The Dome', href: '#dome' },
-    { label: 'Menu', href: '#menu' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'Booking', href: '#booking' },
-    { label: 'Contact', href: '#contact' },
+    { label: "Home", href: "#hero" },
+    { label: "About", href: "#about" },
+    { label: "The Dome", href: "#dome" },
+    { label: "Menu", href: "#menu" },
+    { label: "Gallery", href: "#gallery" },
+    { label: "Booking", href: "#booking" },
+    { label: "Contact", href: "#contact" },
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Youtube, href: '#', label: 'YouTube' },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Youtube, href: "#", label: "YouTube" },
   ];
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId.replace('#', ''));
+    const element = document.getElementById(sectionId.replace("#", ""));
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -60,12 +69,12 @@ const Footer = () => {
             <div className="text-3xl font-luxury font-bold text-primary mb-6">
               Castle Glamp
             </div>
-            
+
             <p className="text-secondary-foreground/80 leading-relaxed mb-6">
-              Where architectural innovation meets natural serenity. Experience 
+              Where architectural innovation meets natural serenity. Experience
               unparalleled luxury in perfect harmony with pristine wilderness.
             </p>
-            
+
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => {
                 const Icon = social.icon;
@@ -85,7 +94,9 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-semibold font-luxury mb-6">Quick Links</h3>
+            <h3 className="text-xl font-semibold font-luxury mb-6">
+              Quick Links
+            </h3>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -102,22 +113,30 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-semibold font-luxury mb-6">Contact Info</h3>
+            <h3 className="text-xl font-semibold font-luxury mb-6">
+              Contact Info
+            </h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-secondary-foreground/80">+1 (555) 123-4567</span>
+                <span className="text-secondary-foreground/80">
+                  +1 (555) 123-4567
+                </span>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-secondary-foreground/80">info@luxurydome.com</span>
+                <span className="text-secondary-foreground/80">
+                  info@luxurydome.com
+                </span>
               </div>
-              
+
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                 <div>
-                  <span className="text-secondary-foreground/80">Hidden Valley Nature Reserve</span>
+                  <span className="text-secondary-foreground/80">
+                    Hidden Valley Nature Reserve
+                  </span>
                   <p className="text-sm text-secondary-foreground/60">
                     Exact location provided upon booking
                   </p>
@@ -128,23 +147,29 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div className="w-full">
-            <h3 className="text-xl font-semibold font-luxury mb-6">Newsletter</h3>
+            <h3 className="text-xl font-semibold font-luxury mb-6">
+              Newsletter
+            </h3>
             <p className="text-secondary-foreground/80 mb-6 leading-relaxed">
-              Subscribe for exclusive offers, seasonal updates, and luxury travel inspiration.
+              Subscribe for exclusive offers, seasonal updates, and luxury
+              travel inspiration.
             </p>
-            
-            <form onSubmit={handleNewsletterSubmit} className="space-y-4">
-              <div className="flex w-full">
+
+            <form
+              onSubmit={handleNewsletterSubmit}
+              className="space-y-4 w-full overflow-hidden"
+            >
+              <div className="flex w-full max-w-full">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-secondary-foreground/10 border border-secondary-foreground/20 rounded-l-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="flex-grow min-w-0 px-4 py-3 bg-secondary-foreground/10 border border-secondary-foreground/20 rounded-l-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-primary text-primary-foreground rounded-r-xl hover:bg-primary-glow transition-colors"
+                  className="shrink-0 px-6 py-3 bg-primary text-primary-foreground rounded-r-xl hover:bg-primary-glow transition-colors"
                 >
                   Subscribe
                 </button>
@@ -161,15 +186,24 @@ const Footer = () => {
             <div className="text-secondary-foreground/60 text-sm">
               © 2024 Castle Glamp Resort. All rights reserved.
             </div>
-            
+
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="text-secondary-foreground/60 hover:text-primary transition-colors"
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="text-secondary-foreground/60 hover:text-primary transition-colors"
+              >
                 Terms of Service
               </a>
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="text-secondary-foreground/60 hover:text-primary transition-colors"
+              >
                 Accessibility
               </a>
             </div>
