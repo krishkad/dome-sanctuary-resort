@@ -127,7 +127,7 @@ const Footer = () => {
           </div>
 
           {/* Newsletter */}
-          <div>
+          <div className="w-full">
             <h3 className="text-xl font-semibold font-luxury mb-6">Newsletter</h3>
             <p className="text-secondary-foreground/80 mb-6 leading-relaxed">
               Subscribe for exclusive offers, seasonal updates, and luxury travel inspiration.
