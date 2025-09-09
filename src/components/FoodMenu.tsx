@@ -12,19 +12,19 @@ const FoodMenu = () => {
         {
           name: 'Wild Berry Pancakes',
           description: 'Fluffy pancakes with locally foraged berries, maple syrup, and whipped cream',
-          price: '₹24',
+          price: '₹240',
           tags: ['Signature', 'Local'],
         },
         {
           name: 'Forest Mushroom Omelet',
           description: 'Farm eggs with wild mushrooms, herbs, and artisan cheese',
-          price: '₹28',
+          price: '₹280',
           tags: ['Organic', 'Vegetarian'],
         },
         {
           name: 'Smoked Salmon Benedict',
           description: 'Poached eggs, smoked salmon, hollandaise on toasted brioche',
-          price: '₹32',
+          price: '₹320',
           tags: ['Premium', 'Signature'],
         },
       ],
