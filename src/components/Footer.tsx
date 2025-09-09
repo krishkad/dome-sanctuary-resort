@@ -58,7 +58,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="text-3xl font-luxury font-bold text-primary mb-6">
-              Luxury Dome
+              Castle Glamp
             </div>
             
             <p className="text-secondary-foreground/80 leading-relaxed mb-6">
@@ -159,7 +159,7 @@ const Footer = () => {
         <div className="container mx-auto px-6 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-secondary-foreground/60 text-sm">
-              © 2024 Luxury Dome Resort. All rights reserved.
+              © 2024 Castle Glamp Resort. All rights reserved.
             </div>
             
             <div className="flex space-x-6 text-sm">

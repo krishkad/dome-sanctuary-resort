@@ -65,7 +65,7 @@ const Testimonials = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary-glow mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover what makes our luxury dome experience truly exceptional through 
+            Discover what makes our Castle Glamp experience truly exceptional through 
             the words of our valued guests who have created unforgettable memories.
           </p>
         </div>
@@ -129,7 +129,7 @@ const Testimonials = () => {
               Ready to Create Your Own Story?
             </h3>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Join our community of satisfied guests and experience the luxury dome 
+              Join our community of satisfied guests and experience the Castle Glamp 
               that has captured hearts and created countless magical moments.
             </p>
             <button 

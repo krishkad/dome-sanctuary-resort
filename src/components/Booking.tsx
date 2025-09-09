@@ -38,7 +38,7 @@ const Booking = () => {
     // Here you would typically send the data to your backend
     toast({
       title: "Booking Request Submitted!",
-      description: "We'll contact you within 24 hours to confirm your luxury dome reservation.",
+      description: "We'll contact you within 24 hours to confirm your Castle Glamp reservation.",
     });
 
     // Reset form
@@ -63,7 +63,7 @@ const Booking = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary-glow mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Secure your exclusive luxury dome experience. Our team will personally 
+            Secure your exclusive Castle Glamp experience. Our team will personally 
             ensure every detail of your stay exceeds your expectations.
           </p>
         </div>
@@ -210,7 +210,7 @@ const Booking = () => {
                 
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between items-center pb-3 border-b border-border">
-                    <span className="text-muted-foreground">Luxury Dome (per night)</span>
+                    <span className="text-muted-foreground">Castle Glamp (per night)</span>
                     <span className="text-2xl font-bold text-primary font-luxury">$850</span>
                   </div>
                   

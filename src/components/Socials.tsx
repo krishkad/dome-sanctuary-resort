@@ -38,7 +38,7 @@ const Socials = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary-glow mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Stay connected with our luxury dome community and be the first to discover 
+            Stay connected with our Castle Glamp community and be the first to discover 
             new experiences, seasonal offers, and behind-the-scenes moments.
           </p>
         </div>
@@ -80,7 +80,7 @@ const Socials = () => {
                 Share Your Experience
               </h3>
               <p className="text-lg text-secondary/80 mb-8 leading-relaxed max-w-2xl mx-auto">
-                Tag us in your luxury dome photos with <strong>#LuxuryDomeExperience</strong> 
+                Tag us in your Castle Glamp photos with <strong>#LuxuryDomeExperience</strong> 
                 for a chance to be featured on our social media and win exclusive perks 
                 for your next visit.
               </p>

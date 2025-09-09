@@ -43,7 +43,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="text-2xl font-luxury font-bold text-primary">
-            Luxury Dome
+            Castle Glamp
           </div>
 
           {/* Desktop Menu */}
@@ -78,7 +78,7 @@ const Navigation = () => {
             <SheetContent side="right" className="w-full sm:w-80 bg-background">
               <SheetHeader>
                 <SheetTitle className="text-2xl font-luxury text-primary">
-                  Luxury Dome
+                  Castle Glamp
                 </SheetTitle>
               </SheetHeader>
               

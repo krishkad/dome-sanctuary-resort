@@ -48,7 +48,7 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary-glow mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We're here to help plan your perfect luxury dome experience. 
+            We're here to help plan your perfect Castle Glamp experience. 
             Reach out with any questions or special requests.
           </p>
         </div>
@@ -194,7 +194,7 @@ const Contact = () => {
                 <div className="bg-wood-light rounded-xl p-4">
                   <p className="text-sm text-secondary leading-relaxed">
                     <strong>Privacy Notice:</strong> To maintain the exclusive and serene 
-                    nature of our luxury dome experience, exact location details are 
+                    nature of our Castle Glamp experience, exact location details are 
                     provided only to confirmed guests along with detailed directions 
                     and arrival instructions.
                   </p>

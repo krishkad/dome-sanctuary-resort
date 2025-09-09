@@ -32,12 +32,12 @@ const TheDome = () => {
   const domeImages = [
     {
       src: heroImage,
-      alt: 'Luxury dome in pristine forest setting at golden hour',
+      alt: 'Castle Glamp in pristine forest setting at golden hour',
       title: 'Forest Setting'
     },
     {
       src: domeExterior,
-      alt: 'Luxury dome exterior with private jacuzzi and wooden deck at sunset',
+      alt: 'Castle Glamp exterior with private jacuzzi and wooden deck at sunset',
       title: 'Private Jacuzzi'
     },
     {

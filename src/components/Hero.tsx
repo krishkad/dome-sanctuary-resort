@@ -29,7 +29,7 @@ const Hero = () => {
         
         <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed animate-fade-in" 
            style={{ animationDelay: '0.2s' }}>
-          Stay in our one-of-a-kind luxury dome — where comfort meets wilderness
+          Stay in our one-of-a-kind Castle Glamp — where comfort meets wilderness
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in"

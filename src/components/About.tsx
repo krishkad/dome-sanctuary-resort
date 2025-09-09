@@ -16,7 +16,7 @@ const About = () => {
             
             <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
               <p>
-                Nestled in pristine nature, our exclusive luxury dome offers an unparalleled 
+                Nestled in pristine nature, our exclusive Castle Glamp offers an unparalleled 
                 escape from the ordinary. This isn't just accommodation—it's a transformative 
                 experience where modern comfort seamlessly blends with the raw beauty of the wilderness.
               </p>
@@ -56,7 +56,7 @@ const About = () => {
             <div className="relative overflow-hidden rounded-3xl shadow-[var(--shadow-luxury)]">
               <img 
                 src={domeInterior} 
-                alt="Luxury dome interior with premium furnishings and panoramic forest views"
+                alt="Castle Glamp interior with premium furnishings and panoramic forest views"
                 className="w-full h-[600px] object-cover hover-scale"
               />
             </div>

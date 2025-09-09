@@ -19,7 +19,7 @@ const Gallery = () => {
   const galleryImages = [
     {
       src: heroImage,
-      alt: 'Luxury dome in pristine forest setting at golden hour',
+      alt: 'Castle Glamp in pristine forest setting at golden hour',
       category: 'Exterior'
     },
     {
