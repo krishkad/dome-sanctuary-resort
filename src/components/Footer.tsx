@@ -134,7 +134,7 @@ const Footer = () => {
             </p>
             
             <form onSubmit={handleNewsletterSubmit} className="space-y-4">
-              <div className="flex">
+              <div className="flex w-full">
                 <input
                   type="email"
                   value={email}

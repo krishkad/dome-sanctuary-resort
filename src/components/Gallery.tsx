@@ -106,6 +106,7 @@ const Gallery = () => {
                   >
                     <div className="aspect-[4/3] overflow-hidden">
                       <img 
+                      
                         src={image.src} 
                         alt={image.alt}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
